@@ -1,0 +1,23 @@
+{
+  "name": "@funcmaticjs/loglevel-plugin",
+  "version": "0.0.1",
+  "description": "Uses the 'X-Log-Level' or 'X-Correlation-Log-Level' headers to dynamically set the log level of ctx.logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Daniel Jhin Yoo <danieljyoo@gmail.com> (https://github.com/danieljyoo)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/funcmaticjs/loglevel-plugin.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@funcmaticjs/funcmatic": "0.0.1",
+    "jest": "^24.8.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
