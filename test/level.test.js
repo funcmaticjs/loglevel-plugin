@@ -1,5 +1,5 @@
 const LogLevelPlugin = require('../lib/level')
-const { ConsoleLogger } = require('@funcmaticjs/funcmatic')
+const { LoggerWrapper } = require('@funcmaticjs/funcmatic')
 
 describe('LogLevelPlugin', () => {
   let ctx = { }
@@ -12,7 +12,7 @@ describe('LogLevelPlugin', () => {
       },
       context: { },
       state: { },
-      logger: new ConsoleLogger()
+      logger: new LoggerWrapper()
     }
     plugin = new LogLevelPlugin()
   })
