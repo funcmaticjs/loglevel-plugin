@@ -37,11 +37,29 @@ describe('LogLevelPlugin', () => {
     })
     expect(ctx.logger.level()).toEqual('info')
   })
+  it ('should set level if level is uppercase', async () => {
+    ctx.event.headers['X-Log-Level'] = 'DEBUG'
+    await plugin.request(ctx, async () => {
+      expect(ctx.logger.level()).toEqual('debug')
+    })
+    expect(ctx.logger.level()).toEqual('info')
+  })
   it ('should noop if no headers set', async () => {
     ctx.event.headers['X-Log-Level'] = 'info'
     await plugin.request(ctx, async () => {
       expect(ctx.logger.level()).toEqual('info')
     })
-    expect(ctx.logger.level()).toEqual('info')
+    expect(plugin.original).toBe(null)
   })
+  it ('should not set level if level is null', async () => {
+    ctx.event.headers['X-Log-Level'] = ''
+    await plugin.request(ctx, noop)
+    expect(plugin.original).toBe(null)
+  })
+  it ('should not set level if level is invalid', async () => {
+    ctx.event.headers['X-Log-Level'] = 'invalid'
+    await plugin.request(ctx, noop)
+    expect(plugin.original).toBe(null)
+  })
+
 })

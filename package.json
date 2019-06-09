@@ -1,6 +1,6 @@
 {
   "name": "@funcmaticjs/loglevel-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Uses the 'X-Log-Level' or 'X-Correlation-Log-Level' headers to dynamically set the log level of ctx.logger",
   "main": "index.js",
   "scripts": {
